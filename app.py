@@ -14,26 +14,26 @@ uploaded = st.file_uploader("Tải file DOCX", type=["docx"])
 
 
 
-use_ai = st.checkbox(
-    "🤖 Bật AI xác nhận lỗi gõ",
-    value=False
-)
+# use_ai = st.checkbox(
+#     "🤖 Bật AI xác nhận lỗi gõ",
+#     value=False
+# )
 
 ai_mode = None
 openai_api_key = None
 
-if use_ai:
-    ai_mode = st.radio(
-        "Chọn AI",
-        ["Ollama (Offline)", "OpenAI (Online)"]
-    )
+# if use_ai:
+#     ai_mode = st.radio(
+#         "Chọn AI",
+#         ["Ollama (Offline)", "OpenAI (Online)"]
+#     )
 
-    if ai_mode == "OpenAI (Online)":
-        openai_api_key = st.text_input(
-            "🔑 OpenAI API Key",
-            type="password",
-            placeholder="sk-..."
-        )
+#     if ai_mode == "OpenAI (Online)":
+#         openai_api_key = st.text_input(
+#             "🔑 OpenAI API Key",
+#             type="password",
+#             placeholder="sk-..."
+#         )
 
 
 
@@ -58,29 +58,29 @@ if uploaded:
         ]
         ai_word_checker = None
         
-        if use_ai:
+        # if use_ai:
 
-            if ai_mode == "Ollama (Offline)":
-                from checker.ai.ollama_word_checker import OllamaWordChecker
+        #     if ai_mode == "Ollama (Offline)":
+        #         from checker.ai.ollama_word_checker import OllamaWordChecker
 
-                ai_word_checker = OllamaWordChecker(
-                    model="llama3",
-                    enabled=True
-                )
+        #         ai_word_checker = OllamaWordChecker(
+        #             model="llama3",
+        #             enabled=True
+        #         )
 
-            elif ai_mode == "OpenAI (Online)":
+        #     elif ai_mode == "OpenAI (Online)":
 
-                if not openai_api_key:
-                    st.warning("⚠️ Vui lòng nhập OpenAI API Key")
-                else:
+        #         if not openai_api_key:
+        #             st.warning("⚠️ Vui lòng nhập OpenAI API Key")
+        #         else:
 
-                    client = OpenAI(api_key=openai_api_key)
+        #             client = OpenAI(api_key=openai_api_key)
                     
 
-                    ai_word_checker = OpenAIWordChecker(
-                        client=client,
-                        enabled=True
-                    )
+        #             ai_word_checker = OpenAIWordChecker(
+        #                 client=client,
+        #                 enabled=True
+        #             )
                     
         
 
