@@ -1,6 +1,4 @@
 python-docx
 openai
 streamlit==1.37.1
-doctr[torch]
 huggingface_hub>=0.19
-datasets
