@@ -20,7 +20,6 @@ COMMON_MISTAKES = {
     "xuất sắc": "xuất sắc",
     "suất sắc": "xuất sắc",
     "sảy ra": "xảy ra",
-    "xẩy dựng": "xây dựng",
     "giải toả": "giải tỏa",
     "thống nhât": "thống nhất",
     "đièu kiện": "điều kiện",
